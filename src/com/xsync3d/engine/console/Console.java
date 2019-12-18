@@ -1,4 +1,4 @@
-package com.xsync3d.engine.terminal;
+package com.xsync3d.engine.console;
 
 import java.util.Scanner;
 

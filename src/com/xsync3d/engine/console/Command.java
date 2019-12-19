@@ -15,4 +15,9 @@ public class Command {
         this.command = command;
         return true;
     }
+
+    public String run(String command) {
+        return "output";
+    }
+
 }

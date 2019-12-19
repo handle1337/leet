@@ -7,13 +7,21 @@ public class Console {
     private Scanner input = new Scanner(System.in);
 
     private void loop() {
-        while (true) {
-        String command = input.nextLine();
-
+        Command command = new Command();
+        do {
+        String cmd = input.nextLine();
+            if (!command.isValid(cmd)) {
+                System.err.println("Error: Command was not recognized, use 'help' to see a list of commands.");
+                break;
+            }
+            else {
+                System.out.println("Command is valid.");
+            }
         }
+        while (true);
     }
 
-    public void run(String[] args) {
-
+    public void run() {
+        loop();
     }
 }

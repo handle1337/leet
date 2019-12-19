@@ -1,11 +1,13 @@
 package com.xsync3d;
 
 import com.xsync3d.engine.Window;
+import com.xsync3d.engine.console.Console;
 
 public class Main implements Runnable {
     public Thread game;
     public static Window window;
     public static final int WIDTH = 1280, HEIGHT = 760;
+    static Console console = new Console();
 
     public void start() {
         game = new Thread(this, "game");
@@ -34,6 +36,7 @@ public class Main implements Runnable {
     }
 
     public static void main(String[] args) {
+        console.run();
         new Main().start();
     }
 }

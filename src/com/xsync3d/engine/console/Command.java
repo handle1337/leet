@@ -6,6 +6,8 @@ public class Command {
 
     private String parseSyntax(String command) {
         this.command = command;
+        String valid_cmd = "test"; //TODO make public function to index all available commands for the console, then set valid_cmd to the return of it.
+        boolean isFound = command.contains(valid_cmd);
         return command;
     }
 

@@ -3,15 +3,20 @@ package com.xsync3d;
 import com.xsync3d.engine.Window;
 import com.xsync3d.engine.console.Console;
 
+import javax.swing.*;
+
 public class Main implements Runnable {
     public Thread game;
     public static Window window;
     public static final int WIDTH = 1280, HEIGHT = 760;
-    static Console console = new Console();
+    public static long time;
+    public int frames;
+    public static Console console;
 
     public void start() {
         game = new Thread(this, "game");
         game.start();
+        time = System.currentTimeMillis();
     }
 
     public static void init() {
@@ -29,6 +34,12 @@ public class Main implements Runnable {
 
     private void update() {
         window.update();
+        frames++;
+        if (System.currentTimeMillis() > time + 1000) {
+            time = System.currentTimeMillis();
+            frames = 0;
+            System.out.println(frames);
+        }
     }
 
     private void render() {

@@ -4,19 +4,28 @@ import com.xsync3d.engine.Window;
 
 import java.awt.*;
 
-public class Mapper extends Window {
-    private final int height;
-    private final int width;
+public class Mapper {
+    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+    public static Window window;
 
-    //constructor
-    public Mapper(int width, int height, String title) {
+    public static void init() {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        this.width = gd.getDisplayMode().getWidth();
-        this.height = gd.getDisplayMode().getHeight();
+        final int WIDTH = gd.getDisplayMode().getWidth();
+        final int HEIGHT = gd.getDisplayMode().getHeight();
+        window = new Window(WIDTH, HEIGHT, "Game");
+        window.create();
     }
 
-    public void init() {
+    private static void render() {
+        window.swapBuffers();
+    }
 
+    public static void run() {
+        init();
+        while (!window.shouldClose()) {
+            window.update();
+            render();
+        }
     }
 
 }

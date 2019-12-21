@@ -34,12 +34,6 @@ public class Main implements Runnable {
 
     private void update() {
         window.update();
-        frames++;
-        if (System.currentTimeMillis() > time + 1000) {
-            time = System.currentTimeMillis();
-            frames = 0;
-            System.out.println(frames);
-        }
     }
 
     private void render() {

@@ -16,7 +16,6 @@ public class Console {
             }
             else {
                 System.out.println("Command is valid.");
-                command.run(cmd);
             }
         }
         while (true); **/

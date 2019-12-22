@@ -3,8 +3,6 @@ package com.xsync3d;
 import com.xsync3d.engine.Window;
 import com.xsync3d.engine.console.Console;
 
-import javax.swing.*;
-
 public class Main implements Runnable {
     public Thread game;
     public static Window window;
@@ -41,7 +39,7 @@ public class Main implements Runnable {
     }
 
     public static void main(String[] args) {
-        console.run();
+       //TODO fix console.run(); "java.lang.NullPointerException"
         new Main().start();
     }
 }

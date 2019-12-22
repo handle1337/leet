@@ -1,15 +1,13 @@
 package com.xsync3d;
 
 import com.xsync3d.engine.Window;
-import com.xsync3d.engine.console.Console;
 
 public class Main implements Runnable {
     public Thread game;
-    public static Window window;
-    public static final int WIDTH = 1280, HEIGHT = 760;
-    public static long time;
+    public Window window;
+    public final int WIDTH = 1280, HEIGHT = 760;
+    public long time;
     public int frames;
-    public static Console console;
 
     public void start() {
         game = new Thread(this, "game");
@@ -17,7 +15,7 @@ public class Main implements Runnable {
         time = System.currentTimeMillis();
     }
 
-    public static void init() {
+    public void init() {
         window = new Window(WIDTH, HEIGHT, "Game");
         window.create();
     }

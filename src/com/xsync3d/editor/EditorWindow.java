@@ -4,7 +4,7 @@ import com.xsync3d.engine.Window;
 
 import java.awt.*;
 
-public class Mapper {
+public class EditorWindow {
     GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     public static Window window;
 
@@ -27,5 +27,4 @@ public class Mapper {
             render();
         }
     }
-
 }
